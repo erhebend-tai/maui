@@ -1,0 +1,1098 @@
+{
+  "framework": ".NET MAUI",
+  "categories": {
+    "views": [
+      {
+        "name": "CarouselView",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows"
+        ],
+        "description": "Displays a scrollable list of data items in a carousel layout"
+      },
+      {
+        "name": "CollectionView",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Displays a scrollable list of selectable data items using different layout specifications"
+      },
+      {
+        "name": "ContentView",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "A control that contains a single child element"
+      },
+      {
+        "name": "Frame",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "A layout that wraps a view or layout with a border and shadow (Obsolete: use Border instead)"
+      },
+      {
+        "name": "ListView",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Displays a scrollable list of selectable data items"
+      },
+      {
+        "name": "ScrollView",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Provides a scrolling container for content that exceeds the visible area"
+      },
+      {
+        "name": "SwipeView",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows"
+        ],
+        "description": "Wraps an item and provides context menu items revealed by a swipe gesture"
+      },
+      {
+        "name": "TableView",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Displays a table of scrollable items organized into sections"
+      }
+    ],
+    "layouts": [
+      {
+        "name": "AbsoluteLayout",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Positions child elements at specific locations relative to the layout"
+      },
+      {
+        "name": "BindableLayout",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Enables any layout class that derives from Layout to generate its content by binding to a collection of items"
+      },
+      {
+        "name": "FlexLayout",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Arranges child elements in rows or columns with flexible sizing options"
+      },
+      {
+        "name": "Grid",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Arranges child elements in rows and columns"
+      },
+      {
+        "name": "HorizontalStackLayout",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Arranges child elements horizontally in a single line"
+      },
+      {
+        "name": "StackLayout",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Arranges child elements vertically or horizontally in a stack"
+      },
+      {
+        "name": "VerticalStackLayout",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Arranges child elements vertically in a single line"
+      }
+    ],
+    "cells": [
+      {
+        "name": "EntryCell",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Combines a label with an entry control, typically used in TableView"
+      },
+      {
+        "name": "ImageCell",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Displays an image with text and detail text, typically used in ListView"
+      },
+      {
+        "name": "SwitchCell",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Combines a label with a switch control, typically used in TableView"
+      },
+      {
+        "name": "TextCell",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Displays text and detail text, typically used in ListView or TableView"
+      },
+      {
+        "name": "ViewCell",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Displays a custom view, typically used in ListView or TableView"
+      }
+    ],
+    "blazor": [
+      {
+        "name": "BlazorWebView",
+        "namespace": "Microsoft.AspNetCore.Components.WebView.Maui",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows"
+        ],
+        "description": "Hosts Blazor components in a native WebView"
+      },
+      {
+        "name": "RootComponents",
+        "namespace": "Microsoft.AspNetCore.Components.WebView.Maui",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows"
+        ],
+        "description": "Defines the root Blazor components to render"
+      }
+    ],
+    "controls": [
+      {
+        "name": "ActivityIndicator",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Displays an activity indicator to show that the application is engaged in a lengthy activity"
+      },
+      {
+        "name": "Border",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Provides a border, background, and corner radius around a single child element"
+      },
+      {
+        "name": "BoxView",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Draws a filled rectangle of a specified color"
+      },
+      {
+        "name": "Button",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "A control that responds to touch input"
+      },
+      {
+        "name": "CheckBox",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "A control that can be toggled between checked and unchecked states"
+      },
+      {
+        "name": "DatePicker",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Allows the user to select a date"
+      },
+      {
+        "name": "Editor",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "A multi-line text editor control"
+      },
+      {
+        "name": "Entry",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "A single-line text input control"
+      },
+      {
+        "name": "GraphicsView",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Provides a canvas on which 2D graphics can be drawn using drawing commands"
+      },
+      {
+        "name": "Image",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Displays an image from a file, URI, or stream"
+      },
+      {
+        "name": "ImageButton",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "A button that displays an image and responds to touch input"
+      },
+      {
+        "name": "IndicatorView",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows"
+        ],
+        "description": "Displays indicators that represent the number of items in a CarouselView"
+      },
+      {
+        "name": "Label",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Displays single or multi-line text"
+      },
+      {
+        "name": "Picker",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Allows the user to select an item from a list of text strings"
+      },
+      {
+        "name": "ProgressBar",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Visually represents progress as a horizontal bar"
+      },
+      {
+        "name": "RadioButton",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Enables the user to select one option from a set"
+      },
+      {
+        "name": "RefreshView",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows"
+        ],
+        "description": "Provides pull-to-refresh functionality"
+      },
+      {
+        "name": "SearchBar",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Accepts user input used to initiate a search"
+      },
+      {
+        "name": "Slider",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Allows the user to select a value from a continuous range"
+      },
+      {
+        "name": "Stepper",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Allows the user to select a numeric value from a range by tapping buttons"
+      },
+      {
+        "name": "Switch",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "A control that can be toggled between on and off states"
+      },
+      {
+        "name": "TimePicker",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Allows the user to select a time"
+      },
+      {
+        "name": "WebView",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Displays HTML content or web pages"
+      },
+      {
+        "name": "HybridWebView",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows"
+        ],
+        "description": "Enables hosting arbitrary HTML/CSS/JavaScript content in a web view, and enables communication between the code in the web view and the code in the app"
+      }
+    ],
+    "pages": [
+      {
+        "name": "ContentPage",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Displays a single view"
+      },
+      {
+        "name": "FlyoutPage",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Manages two related pages - a flyout page that presents items, and a detail page that displays details about items on the flyout page"
+      },
+      {
+        "name": "NavigationPage",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Provides hierarchical navigation with back button support"
+      },
+      {
+        "name": "TabbedPage",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Displays tabs across the top or bottom of the screen that allow navigation between child pages"
+      },
+      {
+        "name": "Shell",
+        "namespace": "Microsoft.Maui.Controls",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Provides a simplified navigation experience with flyout, tabs, and URI-based navigation"
+      }
+    ],
+    "graphics": [
+      {
+        "name": "Canvas",
+        "namespace": "Microsoft.Maui.Graphics",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Provides 2D drawing capabilities"
+      },
+      {
+        "name": "Colors",
+        "namespace": "Microsoft.Maui.Graphics",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Provides predefined colors"
+      },
+      {
+        "name": "Fonts",
+        "namespace": "Microsoft.Maui.Graphics",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Font handling and text rendering"
+      },
+      {
+        "name": "Images",
+        "namespace": "Microsoft.Maui.Graphics",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Image loading and manipulation"
+      },
+      {
+        "name": "Paint",
+        "namespace": "Microsoft.Maui.Graphics",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Defines how to paint graphics objects"
+      },
+      {
+        "name": "Patterns",
+        "namespace": "Microsoft.Maui.Graphics",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Pattern fills for graphics"
+      },
+      {
+        "name": "Shapes",
+        "namespace": "Microsoft.Maui.Controls.Shapes",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "2D shape drawing (Ellipse, Line, Path, Polygon, Polyline, Rectangle)"
+      },
+      {
+        "name": "Text",
+        "namespace": "Microsoft.Maui.Graphics.Text",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Advanced text layout and rendering"
+      }
+    ],
+    "essentials": [
+      {
+        "name": "Accelerometer",
+        "namespace": "Microsoft.Maui.Devices.Sensors",
+        "platforms": [
+          "Android",
+          "iOS",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Monitors the device's accelerometer sensor to detect changes in movement"
+      },
+      {
+        "name": "AppActions",
+        "namespace": "Microsoft.Maui.ApplicationModel",
+        "platforms": [
+          "Android",
+          "iOS"
+        ],
+        "description": "Provides app shortcuts that appear in the system UI"
+      },
+      {
+        "name": "AppInfo",
+        "namespace": "Microsoft.Maui.ApplicationModel",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Provides information about the application"
+      },
+      {
+        "name": "Battery",
+        "namespace": "Microsoft.Maui.Devices",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Provides battery information and monitors for changes"
+      },
+      {
+        "name": "Clipboard",
+        "namespace": "Microsoft.Maui.ApplicationModel.DataTransfer",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Enables reading and writing text and other data to the system clipboard"
+      },
+      {
+        "name": "Compass",
+        "namespace": "Microsoft.Maui.Devices.Sensors",
+        "platforms": [
+          "Android",
+          "iOS",
+          "Windows"
+        ],
+        "description": "Monitors the device's compass sensor to detect orientation"
+      },
+      {
+        "name": "Connectivity",
+        "namespace": "Microsoft.Maui.Networking",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Provides network connectivity information and monitors for changes"
+      },
+      {
+        "name": "Contacts",
+        "namespace": "Microsoft.Maui.ApplicationModel.Communication",
+        "platforms": [
+          "Android",
+          "iOS",
+          "Windows"
+        ],
+        "description": "Allows picking and reading contact information"
+      },
+      {
+        "name": "DeviceDisplay",
+        "namespace": "Microsoft.Maui.Devices",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Provides information about the device's screen and orientation"
+      },
+      {
+        "name": "DeviceInfo",
+        "namespace": "Microsoft.Maui.Devices",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Provides information about the device"
+      },
+      {
+        "name": "Email",
+        "namespace": "Microsoft.Maui.ApplicationModel.Communication",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Enables composing and sending email"
+      },
+      {
+        "name": "FilePicker",
+        "namespace": "Microsoft.Maui.Storage",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Allows the user to pick files from the device"
+      },
+      {
+        "name": "FileSystem",
+        "namespace": "Microsoft.Maui.Storage",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Provides access to application file system paths"
+      },
+      {
+        "name": "Flashlight",
+        "namespace": "Microsoft.Maui.Devices",
+        "platforms": [
+          "Android",
+          "iOS"
+        ],
+        "description": "Controls the device's flashlight/torch"
+      },
+      {
+        "name": "Geocoding",
+        "namespace": "Microsoft.Maui.Devices.Sensors",
+        "platforms": [
+          "Android",
+          "iOS",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Provides geocoding and reverse geocoding services"
+      },
+      {
+        "name": "Geolocation",
+        "namespace": "Microsoft.Maui.Devices.Sensors",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Retrieves the device's current geographic location"
+      },
+      {
+        "name": "Gyroscope",
+        "namespace": "Microsoft.Maui.Devices.Sensors",
+        "platforms": [
+          "Android",
+          "iOS",
+          "Windows"
+        ],
+        "description": "Monitors the device's gyroscope sensor for rotation"
+      },
+      {
+        "name": "Haptic Feedback",
+        "namespace": "Microsoft.Maui.Devices",
+        "platforms": [
+          "Android",
+          "iOS",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Provides haptic feedback (vibration)"
+      },
+      {
+        "name": "Launcher",
+        "namespace": "Microsoft.Maui.ApplicationModel",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Enables launching URIs and apps"
+      },
+      {
+        "name": "Magnetometer",
+        "namespace": "Microsoft.Maui.Devices.Sensors",
+        "platforms": [
+          "Android",
+          "iOS",
+          "Windows"
+        ],
+        "description": "Monitors the device's magnetometer sensor"
+      },
+      {
+        "name": "MainThread",
+        "namespace": "Microsoft.Maui.ApplicationModel",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Runs code on the application's main thread"
+      },
+      {
+        "name": "Map",
+        "namespace": "Microsoft.Maui.ApplicationModel",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Opens the system map application"
+      },
+      {
+        "name": "Media",
+        "namespace": "Microsoft.Maui.Media",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Enables taking photos and picking images"
+      },
+      {
+        "name": "Permissions",
+        "namespace": "Microsoft.Maui.ApplicationModel",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Checks and requests runtime permissions"
+      },
+      {
+        "name": "PhoneDialer",
+        "namespace": "Microsoft.Maui.ApplicationModel.Communication",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Opens the phone dialer"
+      },
+      {
+        "name": "Preferences",
+        "namespace": "Microsoft.Maui.Storage",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Stores application preferences in key-value storage"
+      },
+      {
+        "name": "Screenshot",
+        "namespace": "Microsoft.Maui.Media",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Captures a screenshot of the current screen"
+      },
+      {
+        "name": "SecureStorage",
+        "namespace": "Microsoft.Maui.Storage",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows"
+        ],
+        "description": "Securely stores key-value pairs"
+      },
+      {
+        "name": "Share",
+        "namespace": "Microsoft.Maui.ApplicationModel.DataTransfer",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Enables sharing text and URIs to other apps"
+      },
+      {
+        "name": "Sms",
+        "namespace": "Microsoft.Maui.ApplicationModel.Communication",
+        "platforms": [
+          "Android",
+          "iOS",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Enables composing and sending SMS messages"
+      },
+      {
+        "name": "TextToSpeech",
+        "namespace": "Microsoft.Maui.Media",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Converts text to spoken audio"
+      },
+      {
+        "name": "Vibration",
+        "namespace": "Microsoft.Maui.Devices",
+        "platforms": [
+          "Android",
+          "iOS",
+          "Windows",
+          "Tizen"
+        ],
+        "description": "Controls device vibration"
+      },
+      {
+        "name": "WebAuthenticator",
+        "namespace": "Microsoft.Maui.Authentication",
+        "platforms": [
+          "Android",
+          "iOS",
+          "MacCatalyst"
+        ],
+        "description": "Enables web-based authentication flows"
+      }
+    ]
+  },
+  "generatedDate": "2026-02-15T21:36:42.4767318+00:00",
+  "version": "1.0.0"
+}
