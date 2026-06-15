@@ -4,6 +4,30 @@ on:
   slash_command:
     name: review
     events: [pull_request_comment]
+  skip-author-associations:
+    issue_comment: [contributor, first_time_contributor, first_timer, mannequin, none]
+    pull_request_review_comment: [contributor, first_time_contributor, first_timer, mannequin, none]
+  reaction: none
+  status-comment: false
+  steps:
+    - name: Confirm exact /review tests command
+      id: exact_command
+      env:
+        EVENT_NAME: ${{ github.event_name }}
+        COMMENT_BODY: ${{ github.event.comment.body }}
+        ISSUE_PULL_REQUEST_URL: ${{ github.event.issue.pull_request.url }}
+      run: |
+        if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+          echo "should_run=true" >> "$GITHUB_OUTPUT"; exit 0
+        fi
+        if [ "$EVENT_NAME" != "issue_comment" ] || [ -z "${ISSUE_PULL_REQUEST_URL:-}" ]; then
+          echo "should_run=false" >> "$GITHUB_OUTPUT"; exit 0
+        fi
+        if [[ "$COMMENT_BODY" =~ ^[[:space:]]*/review[[:space:]]+tests[[:space:]]*$ ]]; then
+          echo "should_run=true" >> "$GITHUB_OUTPUT"
+        else
+          echo "should_run=false" >> "$GITHUB_OUTPUT"
+        fi
   workflow_dispatch:
     inputs:
       pr_number:
@@ -28,14 +52,16 @@ on:
 labels: ["pr-review", "testing"]
 
 # gh-aw slash commands match the first token only, so this workflow listens for
-# `/review` and then a deterministic filter job skips unless the comment uses
-# the canonical `/review tests` subcommand. workflow_dispatch is always allowed.
+# `/review` and then a pre-activation step skips unless the whole comment is
+# exactly `/review tests`. workflow_dispatch is always allowed.
 if: >-
   github.event_name == 'workflow_dispatch' ||
-  (github.event_name == 'issue_comment' &&
-   github.event.issue.pull_request &&
-   contains(github.event.comment.body, 'tests') &&
-   needs.command-filter.outputs.should-run == 'true')
+  needs.pre_activation.outputs.exact_command_should_run == 'true'
+
+jobs:
+  pre-activation:
+    outputs:
+      exact_command_should_run: ${{ steps.exact_command.outputs.should_run }}
 
 permissions:
   contents: read
@@ -54,6 +80,7 @@ safe-outputs:
     target: "*"
     hide-older-comments: true
     discussions: false
+    footer: false
   noop:
     report-as-issue: false
   missing-tool:
@@ -61,43 +88,6 @@ safe-outputs:
   report-incomplete:
     create-issue: false
   report-failure-as-issue: false
-  messages:
-    footer: "> Test-failure review by [{workflow_name}]({run_url})"
-    run-started: "Reviewing test failures on this PR... [{workflow_name}]({run_url})"
-    run-success: "Test-failure review complete. [{workflow_name}]({run_url})"
-    run-failure: "Test-failure review failed. [{workflow_name}]({run_url}) {status}"
-
-jobs:
-  command-filter:
-    if: >-
-      github.event_name == 'workflow_dispatch' ||
-      (github.event_name == 'issue_comment' &&
-       github.event.issue.pull_request &&
-       contains(github.event.comment.body, 'tests'))
-    runs-on: ubuntu-slim
-    outputs:
-      should-run: ${{ steps.check.outputs.should-run }}
-    steps:
-      - name: Confirm /review tests subcommand
-        id: check
-        env:
-          EVENT_NAME: ${{ github.event_name }}
-          COMMENT_BODY: ${{ github.event.comment.body }}
-          ISSUE_PULL_REQUEST_URL: ${{ github.event.issue.pull_request.url }}
-        run: |
-          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
-            echo "should-run=true" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-
-          echo "should-run=false" >> "$GITHUB_OUTPUT"
-          if [ "$EVENT_NAME" != "issue_comment" ] || [ -z "${ISSUE_PULL_REQUEST_URL:-}" ]; then
-            exit 0
-          fi
-
-          if [[ "$COMMENT_BODY" =~ ^[[:space:]]*/review[[:space:]]+tests([[:space:]]|$) ]]; then
-            echo "should-run=true" >> "$GITHUB_OUTPUT"
-          fi
 
 tools:
   github:
@@ -112,6 +102,7 @@ network:
     - "*.visualstudio.com"
     - helix.dot.net
     - "*.blob.core.windows.net"
+    - img.shields.io
 
 concurrency:
   group: "review-tests-${{ github.event.issue.number || inputs.pr_number || github.run_id }}"
@@ -201,43 +192,42 @@ If required files are missing, post a short failure report with `add_comment` un
 When triggered via `workflow_dispatch`, `${{ inputs.suppress_output }}` controls output:
 
 - If `true`, perform the review and log the final report in your response, but do not call `add_comment`.
-- If `false` or empty, post the report as a PR comment.
+- If `false` or empty, post the report as a PR conversation comment.
 
-## When no action is needed
+## When no failures are found
 
-If the gathered context shows no failing, pending, or inconclusive checks and no extracted failures, call `noop` with a concise reason. Do not post a PR comment in that case.
+If the gathered context shows no failing, pending, or inconclusive checks and no extracted failures, still post a PR conversation comment with `add_comment` unless dry-run mode is active. Use the same collapsed shape as other results with:
 
-Example:
+- Overall verdict: `No failures found`
+- Overall badge color: `1a7f37`
+- Failures badge value: `0`
+- No platform badges
+- Recommended action: no test-failure action is needed
 
-```json
-{"noop": {"message": "No failing or inconclusive test evidence was found for this PR."}}
-```
+Only call `noop` when dry-run mode is active and no PR comment should be posted.
 
 ## Posting results
 
-If dry-run mode is not active, call `add_comment` exactly once with `item_number` set to the target PR number. Use this AI-summary-style top-level shape:
+If dry-run mode is not active, call `add_comment` exactly once with `item_number` set to the target PR number and `body` set to this shape:
 
 ```markdown
-<!-- Test Failure Review -->
+<!-- Tests Failure -->
 
-## Test Failure Review
+## Tests Failure Analysis
 
-> @[PR author] — new test-failure review results are available based on this last commit: <a href="[commit URL]"><code>[sha7]</code></a>.
+> @[PR author] — test-failure review results are available based on commit [`[sha7]`]([commit URL]).
 > To request a fresh review after new comments, commits, or CI runs, comment `/review tests`.
 
 <p align="left">
   <img alt="Overall [verdict]" src="https://img.shields.io/badge/Overall-[verdict]-[color]?labelColor=30363d&style=flat-square">
   <img alt="Failures [count]" src="https://img.shields.io/badge/Failures-[count]-8250df?labelColor=30363d&style=flat-square">
-  <img alt="Data [Complete|Partial]" src="https://img.shields.io/badge/Data-[Complete|Partial]-[color]?labelColor=30363d&style=flat-square">
   <img alt="Platform [platform]" src="https://img.shields.io/badge/Platform-[platform]-0969da?labelColor=30363d&style=flat-square">
 </p>
 
-<!-- SESSION:[sha7] START -->
 <details>
-<summary>[icon] <strong>Test Failure Review</strong> — <a href="[commit URL]"><code>[sha7]</code></a> · <strong>[PR title]</strong> · <em>[UTC timestamp]</em></summary>
-<br/>
+<summary><strong>Test Failure Review:</strong> [verdict] - click to expand</summary>
 
-**Overall verdict:** [Likely PR-caused | Likely unrelated | Needs human investigation | Insufficient data]
+**Overall verdict:** [Likely PR-caused | Likely unrelated | Needs human investigation | Insufficient data | No failures found]
 
 [One or two sentences summarizing the strongest evidence.]
 
@@ -257,9 +247,14 @@ If dry-run mode is not active, call `add_comment` exactly once with `item_number
 </details>
 
 </details>
-<!-- SESSION:[sha7] END -->
 ```
 
 Do not apply labels, trigger reruns, approve the PR, request changes, or modify code.
+
+Do not include a Data badge.
+
+Do not use emojis anywhere in the posted comment.
+
+Use Markdown links, not raw `<a>` tags. gh-aw safe outputs sanitize raw anchors before posting.
 
 Do not use `<details open>` anywhere. Every collapsible section must be collapsed by default.
